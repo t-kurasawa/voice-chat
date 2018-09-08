@@ -54,7 +54,7 @@ export default class TeamUp extends React.Component {
         <Button
           title = 'Online'
           style={styles.button}
-          onPress = {() => Actions.Online({teamNumber: this.state.teamNumber})}
+          onPress = {() => Actions.Online({teamNumber: this.deleteDelimiter(this.state.teamNumber)})}
         />
       </View>
     );
