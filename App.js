@@ -1,25 +1,27 @@
 import React from 'react';
-import { AppRegistry, StyleSheet, Text, View } from 'react-native';
-import TeamUp from './TeamUp.js'
+import { AppRegistry } from 'react-native';
+import { Router, Scene } from 'react-native-router-flux';
+import TeamUp from './TeamUp.js';
+import Online from './Online.js';
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>４桁のチームナンバーを入れてください</Text>
-        <TeamUp></TeamUp>
-      </View>
+      <Router>
+        <Scene key="root">
+          <Scene key="TeamUp"
+            component={TeamUp}
+            title = 'TeamUp'
+            initial
+          />
+          <Scene key="Online"
+            component={Online}
+            title = 'Online'
+          />
+        </Scene>
+      </Router>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 AppRegistry.registerComponent('App', () => App);
