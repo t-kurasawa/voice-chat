@@ -3,6 +3,7 @@ import { AppRegistry } from 'react-native';
 import { Router, Scene } from 'react-native-router-flux';
 import TeamUp from './TeamUp.js';
 import Online from './Online.js';
+console.disableYellowBox = true;
 
 export default class App extends React.Component {
   render() {
